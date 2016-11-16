@@ -13,10 +13,10 @@
 		16214AEF1DDC860F00EA6813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16214AED1DDC860F00EA6813 /* LaunchScreen.storyboard */; };
 		16214AFA1DDC860F00EA6813 /* StadiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214AF91DDC860F00EA6813 /* StadiumTests.swift */; };
 		16214B051DDC860F00EA6813 /* StadiumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214B041DDC860F00EA6813 /* StadiumUITests.swift */; };
-		16214B161DDC8E6F00EA6813 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214B151DDC8E6F00EA6813 /* TeamCell.swift */; };
+		16214B161DDC8E6F00EA6813 /* TrainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214B151DDC8E6F00EA6813 /* TrainerCell.swift */; };
 		16214B181DDC931300EA6813 /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214B171DDC931300EA6813 /* PokemonCell.swift */; };
 		16214B1B1DDC962D00EA6813 /* PokemonsInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 16214B1A1DDC962D00EA6813 /* PokemonsInfo.json */; };
-		16214B1D1DDC9ABF00EA6813 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214B1C1DDC9ABF00EA6813 /* TeamsViewController.swift */; };
+		16214B1D1DDC9ABF00EA6813 /* TrainersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214B1C1DDC9ABF00EA6813 /* TrainersViewController.swift */; };
 		16214B1F1DDC9AD400EA6813 /* PokemonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214B1E1DDC9AD400EA6813 /* PokemonsViewController.swift */; };
 		16214B211DDC9D4900EA6813 /* TrainersInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 16214B201DDC9D4900EA6813 /* TrainersInfo.json */; };
 /* End PBXBuildFile section */
@@ -51,10 +51,10 @@
 		16214B001DDC860F00EA6813 /* StadiumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StadiumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16214B041DDC860F00EA6813 /* StadiumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumUITests.swift; sourceTree = "<group>"; };
 		16214B061DDC860F00EA6813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		16214B151DDC8E6F00EA6813 /* TeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
+		16214B151DDC8E6F00EA6813 /* TrainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainerCell.swift; sourceTree = "<group>"; };
 		16214B171DDC931300EA6813 /* PokemonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
 		16214B1A1DDC962D00EA6813 /* PokemonsInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PokemonsInfo.json; sourceTree = "<group>"; };
-		16214B1C1DDC9ABF00EA6813 /* TeamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
+		16214B1C1DDC9ABF00EA6813 /* TrainersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainersViewController.swift; sourceTree = "<group>"; };
 		16214B1E1DDC9AD400EA6813 /* PokemonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonsViewController.swift; sourceTree = "<group>"; };
 		16214B201DDC9D4900EA6813 /* TrainersInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TrainersInfo.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,7 +148,7 @@
 		16214B131DDC8DF000EA6813 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				16214B151DDC8E6F00EA6813 /* TeamCell.swift */,
+				16214B151DDC8E6F00EA6813 /* TrainerCell.swift */,
 				16214B171DDC931300EA6813 /* PokemonCell.swift */,
 			);
 			name = Views;
@@ -157,7 +157,7 @@
 		16214B141DDC8DFC00EA6813 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				16214B1C1DDC9ABF00EA6813 /* TeamsViewController.swift */,
+				16214B1C1DDC9ABF00EA6813 /* TrainersViewController.swift */,
 				16214B1E1DDC9AD400EA6813 /* PokemonsViewController.swift */,
 			);
 			name = Controllers;
@@ -311,8 +311,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16214B161DDC8E6F00EA6813 /* TeamCell.swift in Sources */,
-				16214B1D1DDC9ABF00EA6813 /* TeamsViewController.swift in Sources */,
+				16214B161DDC8E6F00EA6813 /* TrainerCell.swift in Sources */,
+				16214B1D1DDC9ABF00EA6813 /* TrainersViewController.swift in Sources */,
 				16214AE51DDC860F00EA6813 /* AppDelegate.swift in Sources */,
 				16214B181DDC931300EA6813 /* PokemonCell.swift in Sources */,
 				16214B1F1DDC9AD400EA6813 /* PokemonsViewController.swift in Sources */,
@@ -566,6 +566,7 @@
 				16214B0B1DDC860F00EA6813 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16214B0C1DDC860F00EA6813 /* Build configuration list for PBXNativeTarget "StadiumTests" */ = {
 			isa = XCConfigurationList;
@@ -574,6 +575,7 @@
 				16214B0E1DDC860F00EA6813 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16214B0F1DDC860F00EA6813 /* Build configuration list for PBXNativeTarget "StadiumUITests" */ = {
 			isa = XCConfigurationList;
@@ -582,6 +584,7 @@
 				16214B111DDC860F00EA6813 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

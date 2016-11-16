@@ -13,13 +13,13 @@
         <!--Trainers-->
         <scene sceneID="7w4-ml-E49">
             <objects>
-                <tableViewController id="j5p-Dn-8S7" customClass="TeamsViewController" customModule="Stadium" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="j5p-Dn-8S7" customClass="TrainersViewController" customModule="Stadium" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="lve-4n-seA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeamCell" rowHeight="100" id="4iI-mb-QQi" customClass="TeamCell" customModule="Stadium" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrainerCell" rowHeight="100" id="4iI-mb-QQi" customClass="TeamCell" customModule="Stadium" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4iI-mb-QQi" id="T58-XC-YuY">
@@ -63,7 +63,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Start Battle" id="keT-S4-5BP"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="oxS-zW-5bo" kind="presentation" modalTransitionStyle="partialCurl" id="6Ht-f0-sjK"/>
+                        <segue destination="oxS-zW-5bo" kind="presentation" identifier="DraftProkemons" modalTransitionStyle="partialCurl" id="6Ht-f0-sjK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E4d-Ve-wPE" userLabel="First Responder" sceneMemberID="firstResponder"/>
