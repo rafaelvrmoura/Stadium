@@ -2,7 +2,7 @@
 //  StadiumTests.swift
 //  StadiumTests
 //
-//  Created by Rafael Moura on 16/11/16.
+//  Created by Lourenço Marinho on 16/11/16.
 //  Copyright © 2016 BEPiD. All rights reserved.
 //
 
@@ -21,16 +21,47 @@ class StadiumTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testTeamsAreInitiated() {
+        let ash = TreinerManager.shared.ash
+        let gary = TreinerManager.shared.gary
+        
+        XCTAssertNotNil(ash, "Ash should not be nil")
+        XCTAssertNotNil(gary, "Gary Valor should not be nil")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testAddPokemonToTeam() {
+        var gary = TreinerManager.shared.gary
+        let previousCount = gary.pokemons.count
+        
+        // Adding a new Pokemon to Team Mystic
+        try! gary.addPokemon("Abra")
+        XCTAssertEqual(gary.pokemons.count, previousCount + 1, "Treiner should have one more Pokemon")
     }
     
+    func testRemovingPokemon() {
+        var ash = TreinerManager.shared.ash
+        let previousCount = ash.pokemons.count
+        
+        // Removing one Pokemon from Team Valor
+        ash.removePokemon("Muk")
+        
+        XCTAssertEqual(ash.pokemons.count, previousCount - 1, "Treiner should have one less Pokemon")
+    }
+    
+    func testMaxNumberOfPokemon() {
+        var gary = TreinerManager.shared.gary
+        
+        // Adding more Pokemon to Team Instinct
+        try! gary.addPokemon("Jolteon")
+        try! gary.addPokemon("Persian")
+        
+        XCTAssertThrowsError(try gary.addPokemon("Raticate"), "A Treiner can't have more than five Pokemon")
+    }
+    
+    func testStartBattle() {
+        let ash = TreinerManager.shared.ash
+        let gary = TreinerManager.shared.gary
+        
+        XCTAssertTrue(TreinerManager.shared.startBattle(treiner: ash, otherTreiner: gary), "Battle should start only with the same number of pokemons")
+    }
 }
