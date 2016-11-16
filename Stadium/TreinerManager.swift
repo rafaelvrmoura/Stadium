@@ -67,7 +67,7 @@ class TreinerManager {
         return [ash, gary]
     }
     
-    init() {
+    fileprivate init() {
         self.ash = Trainer(name: "Ash", pokemons: [])
         self.gary = Trainer(name: "Gary", pokemons: [])
     }
