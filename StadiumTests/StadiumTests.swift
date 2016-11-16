@@ -32,8 +32,8 @@ class StadiumTests: XCTestCase {
         let ash = TreinerManager.shared.ash
         let gary = TreinerManager.shared.gary
         
-        XCTAssertNotNil(ash, "Ash should not be nil")
-        XCTAssertNotNil(gary, "Gary Valor should not be nil")
+        XCTAssertEqual(ash.pokemons.count, 3, "Ash`s team should have 3 Pokemon")
+        XCTAssertEqual(gary.pokemons.count, 3, "Gary`s team should have 3 Pokemon")
     }
     
     func testAddPokemonToTeam() {
@@ -68,7 +68,7 @@ class StadiumTests: XCTestCase {
         XCTAssertThrowsError(try gary.addPokemon(pokemons[8]), "A Treiner can't have more than five Pokemon")
     }
     
-    func testStartBattle() {
+    func testStartBattleShouldSucceed() {
         let ash = TreinerManager.shared.ash
         let gary = TreinerManager.shared.gary
         
