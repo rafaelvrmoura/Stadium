@@ -1,0 +1,17 @@
+[
+ {"name" : "Caterpie", "number" : "010"},
+ {"name" : "Charizard", "number" : "006"},
+ {"name" : "Venusaur", "number" : "003"},
+ {"name" : "Squirtle", "number" : "007"},
+ {"name" : "Blastoise", "number" : "009"},
+ {"name" : "Chikorita", "number" : "152"},
+ {"name" : "Abra", "number" : "063"},
+ {"name" : "Flareon", "number" : "136"},
+ {"name" : "Vaporeon", "number" : "134"},
+ {"name" : "Jolteon", "number" : "135"},
+ {"name" : "Eevee", "number" : "133"},
+ {"name" : "Mew", "number" : "151"},
+ {"name" : "Mewtwo", "number" : "150"},
+ {"name" : "Seadra", "number" : "117"},
+ {"name" : "Slowbro", "number" : "080"}
+]
