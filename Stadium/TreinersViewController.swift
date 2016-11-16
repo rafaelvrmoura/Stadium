@@ -8,16 +8,11 @@
 
 import UIKit
 
-class TrainersViewController: UITableViewController {
+class TreinersViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,19 +24,26 @@ class TrainersViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return TreinerManager.shared.allTreiners.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TrainerCell", for: indexPath) as! TrainerCell
-
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TreinerCell", for: indexPath) as! TreinerCell
+        
+        let treiner = TreinerManager.shared.allTreiners[indexPath.row]
+        let numberOfPokemons = treiner.pokemons.count
+        
+        
+        cell.treinerNameLabel.text = treiner.name
+        cell.pokemonsCountLabel.text = numberOfPokemons == 1 ? "1 Pokemon" : "\(numberOfPokemons) Pokemons"
+        cell.treinerPicture.image = UIImage(named: treiner.name)
+        
         return cell
     }
     

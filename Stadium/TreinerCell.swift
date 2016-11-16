@@ -8,8 +8,13 @@
 
 import UIKit
 
-class TrainerCell: UITableViewCell {
+class TreinerCell: UITableViewCell {
 
+    @IBOutlet weak var treinerNameLabel: UILabel!
+    @IBOutlet weak var pokemonsCountLabel: UILabel!
+    @IBOutlet weak var treinerPicture: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

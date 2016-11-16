@@ -13,12 +13,15 @@
 		16214AEF1DDC860F00EA6813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16214AED1DDC860F00EA6813 /* LaunchScreen.storyboard */; };
 		16214AFA1DDC860F00EA6813 /* StadiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214AF91DDC860F00EA6813 /* StadiumTests.swift */; };
 		16214B051DDC860F00EA6813 /* StadiumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214B041DDC860F00EA6813 /* StadiumUITests.swift */; };
-		16214B161DDC8E6F00EA6813 /* TrainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214B151DDC8E6F00EA6813 /* TrainerCell.swift */; };
+		16214B161DDC8E6F00EA6813 /* TreinerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214B151DDC8E6F00EA6813 /* TreinerCell.swift */; };
 		16214B181DDC931300EA6813 /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214B171DDC931300EA6813 /* PokemonCell.swift */; };
 		16214B1B1DDC962D00EA6813 /* PokemonsInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 16214B1A1DDC962D00EA6813 /* PokemonsInfo.json */; };
-		16214B1D1DDC9ABF00EA6813 /* TrainersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214B1C1DDC9ABF00EA6813 /* TrainersViewController.swift */; };
+		16214B1D1DDC9ABF00EA6813 /* TreinersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214B1C1DDC9ABF00EA6813 /* TreinersViewController.swift */; };
 		16214B1F1DDC9AD400EA6813 /* PokemonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214B1E1DDC9AD400EA6813 /* PokemonsViewController.swift */; };
 		16214B211DDC9D4900EA6813 /* TrainersInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 16214B201DDC9D4900EA6813 /* TrainersInfo.json */; };
+		A9E57A721DDCA6CD00665D3E /* TreinerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E57A711DDCA6CD00665D3E /* TreinerManager.swift */; };
+		A9E57A731DDCC9F900665D3E /* PokemonsInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 16214B1A1DDC962D00EA6813 /* PokemonsInfo.json */; };
+		A9E57A741DDCC9FC00665D3E /* TrainersInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 16214B201DDC9D4900EA6813 /* TrainersInfo.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,12 +54,13 @@
 		16214B001DDC860F00EA6813 /* StadiumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StadiumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16214B041DDC860F00EA6813 /* StadiumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumUITests.swift; sourceTree = "<group>"; };
 		16214B061DDC860F00EA6813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		16214B151DDC8E6F00EA6813 /* TrainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainerCell.swift; sourceTree = "<group>"; };
+		16214B151DDC8E6F00EA6813 /* TreinerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreinerCell.swift; sourceTree = "<group>"; };
 		16214B171DDC931300EA6813 /* PokemonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
 		16214B1A1DDC962D00EA6813 /* PokemonsInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PokemonsInfo.json; sourceTree = "<group>"; };
-		16214B1C1DDC9ABF00EA6813 /* TrainersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainersViewController.swift; sourceTree = "<group>"; };
+		16214B1C1DDC9ABF00EA6813 /* TreinersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreinersViewController.swift; sourceTree = "<group>"; };
 		16214B1E1DDC9AD400EA6813 /* PokemonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonsViewController.swift; sourceTree = "<group>"; };
 		16214B201DDC9D4900EA6813 /* TrainersInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TrainersInfo.json; sourceTree = "<group>"; };
+		A9E57A711DDCA6CD00665D3E /* TreinerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreinerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 				16214AEB1DDC860F00EA6813 /* Assets.xcassets */,
 				16214AED1DDC860F00EA6813 /* LaunchScreen.storyboard */,
 				16214AF01DDC860F00EA6813 /* Info.plist */,
+				A9E57A711DDCA6CD00665D3E /* TreinerManager.swift */,
 			);
 			path = Stadium;
 			sourceTree = "<group>";
@@ -148,7 +153,7 @@
 		16214B131DDC8DF000EA6813 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				16214B151DDC8E6F00EA6813 /* TrainerCell.swift */,
+				16214B151DDC8E6F00EA6813 /* TreinerCell.swift */,
 				16214B171DDC931300EA6813 /* PokemonCell.swift */,
 			);
 			name = Views;
@@ -157,7 +162,7 @@
 		16214B141DDC8DFC00EA6813 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				16214B1C1DDC9ABF00EA6813 /* TrainersViewController.swift */,
+				16214B1C1DDC9ABF00EA6813 /* TreinersViewController.swift */,
 				16214B1E1DDC9AD400EA6813 /* PokemonsViewController.swift */,
 			);
 			name = Controllers;
@@ -294,6 +299,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E57A731DDCC9F900665D3E /* PokemonsInfo.json in Resources */,
+				A9E57A741DDCC9FC00665D3E /* TrainersInfo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,8 +318,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16214B161DDC8E6F00EA6813 /* TrainerCell.swift in Sources */,
-				16214B1D1DDC9ABF00EA6813 /* TrainersViewController.swift in Sources */,
+				16214B161DDC8E6F00EA6813 /* TreinerCell.swift in Sources */,
+				16214B1D1DDC9ABF00EA6813 /* TreinersViewController.swift in Sources */,
+				A9E57A721DDCA6CD00665D3E /* TreinerManager.swift in Sources */,
 				16214AE51DDC860F00EA6813 /* AppDelegate.swift in Sources */,
 				16214B181DDC931300EA6813 /* PokemonCell.swift in Sources */,
 				16214B1F1DDC9AD400EA6813 /* PokemonsViewController.swift in Sources */,
