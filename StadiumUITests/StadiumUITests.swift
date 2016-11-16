@@ -59,7 +59,7 @@ class StadiumUITests: XCTestCase {
         for (index, pokemon) in sortedPokemons.enumerated() {
             
             let isCorrectOrder = tablesQuery.cells.element(boundBy: UInt(index)).staticTexts["# \(pokemon.number)"].exists
-            XCTAssertTrue(isCorrectOrder, "Pokemon \(pokemon.name) is out of order")
+            XCTAssert(isCorrectOrder, "Pokemon \(pokemon.name) is out of order")
         }
         
         app.navigationBars["Pokemons"].buttons["Done"].tap()
