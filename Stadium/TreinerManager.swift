@@ -53,7 +53,7 @@ class TreinerManager {
         return [ash, gary]
     }
     
-    // Returns all Pokemon from the local JSON
+    /// Returns all Pokemon from the local JSON
     var pokemons: [Pokemon] {
         guard let path = Bundle.main.path(forResource: "PokemonsInfo", ofType: "json") else { fatalError("Can't find Pokemon JSON resource.") }
         
