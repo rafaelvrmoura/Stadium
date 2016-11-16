@@ -12,11 +12,16 @@ enum PokemonError: Error {
     case maximumNumberOfPokemonExceeded
 }
 
-struct Trainer {
+class Trainer {
     let name: String
-    var pokemons: [String]
+    var pokemons: [Pokemon]
     
-    mutating func addPokemon(_ pokemon: String) throws {
+    init(name: String, pokemons: [Pokemon]) {
+        self.name = name
+        self.pokemons = pokemons
+    }
+    
+    func addPokemon(_ pokemon: Pokemon) throws {
         if pokemons.count == 5 {
             throw PokemonError.maximumNumberOfPokemonExceeded
         }
@@ -24,7 +29,7 @@ struct Trainer {
         pokemons.append(pokemon)
     }
     
-    mutating func removePokemon(_ pokemon: String) {
+    func removePokemon(_ pokemon: Pokemon) {
         let index = pokemons.index(of: pokemon)
         
         if let i = index {
@@ -33,9 +38,18 @@ struct Trainer {
     }
 }
 
-struct Pokemon {
+class Pokemon: Equatable {
     let name: String
     let number: String
+    
+    init(name: String, number: String) {
+        self.name = name
+        self.number = number
+    }
+    
+    static func ==(lhs: Pokemon, rhs: Pokemon) -> Bool {
+        return lhs.name == rhs.name && lhs.number == rhs.number
+    }
 }
 
 class TreinerManager {
@@ -43,14 +57,19 @@ class TreinerManager {
     static let shared = TreinerManager()
     
     // Ash
-    var ash = Trainer(name: "Ash", pokemons: ["Moltres", "Muk", "Kadabra"])
+    var ash: Trainer
     
     // Gary
-    var gary = Trainer(name: "Gary", pokemons: ["", "", ""])
+    var gary: Trainer
     
     // All Teams
     var allTreiners: [Trainer] {
         return [ash, gary]
+    }
+    
+    init() {
+        self.ash = Trainer(name: "Ash", pokemons: [])
+        self.gary = Trainer(name: "Gary", pokemons: [])
     }
     
     /// Returns all Pokemon from the local JSON
