@@ -8,13 +8,39 @@
 
 import UIKit
 
-class PokemonsViewController: UITableViewController {
+class PokemonsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     weak var treiner: Trainer?
+    
+    var pokemons = [Pokemon]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        pokemons.append(contentsOf: TreinerManager.shared.pokemons)
+        
+        pokemons.sort { (pokemon1, pokemon2) -> Bool in
+            return pokemon1.number < pokemon2.number
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard let treiner = treiner else {
+            return
+        }
+        
+        for selectedPokemon in treiner.pokemons {
+            
+            if let pokemonIndex = pokemons.index(of: selectedPokemon) {
+                let indexPath = IndexPath(row: pokemonIndex, section: 0)
+                
+                tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,20 +50,20 @@ class PokemonsViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return TreinerManager.shared.pokemons.count
+        return pokemons.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonCell", for: indexPath) as! PokemonCell
 
-        let pokemon = TreinerManager.shared.pokemons[indexPath.row]
+        let pokemon = pokemons[indexPath.row]
         
         cell.pokemonNameLabel.text = pokemon.name
         cell.pokemonNumberLabel.text = "# \(pokemon.number)"
@@ -46,23 +72,44 @@ class PokemonsViewController: UITableViewController {
         return cell
     }
     
+    fileprivate func dismiss() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    fileprivate func showAlert() {
+        
+        let alert = UIAlertController(title: "Fail", message: "You can't have more than five pokemons", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     // MARK: - Table view delegate
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-    }
-    
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let pokemon = pokemons[indexPath.row]
         
+        do {
+            try treiner?.addPokemon(pokemon)
+        } catch {
+            tableView.deselectRow(at: indexPath, animated: true)
+            showAlert()
+        }
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let pokemon = pokemons[indexPath.row]
+        treiner?.removePokemon(pokemon)
     }
     
+    // MARK: - Actions
 
+    @IBAction func done(_ sender: UIBarButtonItem) {
+        
+        dismiss()
+    }
 }

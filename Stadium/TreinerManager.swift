@@ -14,14 +14,14 @@ enum PokemonError: Error {
 
 class Trainer {
     let name: String
-    var pokemons: [String]
+    var pokemons: [Pokemon]
     
-    init(name: String, pokemons: [String]) {
+    init(name: String, pokemons: [Pokemon]) {
         self.name = name
         self.pokemons = pokemons
     }
     
-    func addPokemon(_ pokemon: String) throws {
+    func addPokemon(_ pokemon: Pokemon) throws {
         if pokemons.count == 5 {
             throw PokemonError.maximumNumberOfPokemonExceeded
         }
@@ -29,7 +29,7 @@ class Trainer {
         pokemons.append(pokemon)
     }
     
-    func removePokemon(_ pokemon: String) {
+    func removePokemon(_ pokemon: Pokemon) {
         let index = pokemons.index(of: pokemon)
         
         if let i = index {
@@ -38,9 +38,18 @@ class Trainer {
     }
 }
 
-struct Pokemon {
+class Pokemon: Equatable {
     let name: String
     let number: String
+    
+    init(name: String, number: String) {
+        self.name = name
+        self.number = number
+    }
+    
+    static func ==(lhs: Pokemon, rhs: Pokemon) -> Bool {
+        return lhs.name == rhs.name && lhs.number == rhs.number
+    }
 }
 
 class TreinerManager {
@@ -48,19 +57,24 @@ class TreinerManager {
     static let shared = TreinerManager()
     
     // Ash
-    var ash = Trainer(name: "Ash", pokemons: ["Moltres", "Muk", "Kadabra"])
+    var ash: Trainer
     
     // Gary
-    var gary = Trainer(name: "Gary", pokemons: ["", "", ""])
+    var gary: Trainer
     
     // All Teams
     var allTreiners: [Trainer] {
         return [ash, gary]
     }
     
+    fileprivate init() {
+        self.ash = Trainer(name: "Ash", pokemons: [])
+        self.gary = Trainer(name: "Gary", pokemons: [])
+    }
+    
     /// Returns all Pokemon from the local JSON
     var pokemons: [Pokemon] {
-        guard let path = Bundle.main.path(forResource: "PokemonsInfo", ofType: "json") else { fatalError("Can't find Pokemon JSON resource.") }
+        guard let path = Bundle(for: type(of: self)).path(forResource: "PokemonsInfo", ofType: "json") else { fatalError("Can't find Pokemon JSON resource.") }
         
         let data = try! Data(contentsOf: URL(fileURLWithPath: path))
         let json = try! JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [[String : Any]]

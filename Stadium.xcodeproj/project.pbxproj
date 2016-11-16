@@ -19,6 +19,9 @@
 		16214B1D1DDC9ABF00EA6813 /* TreinersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214B1C1DDC9ABF00EA6813 /* TreinersViewController.swift */; };
 		16214B1F1DDC9AD400EA6813 /* PokemonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214B1E1DDC9AD400EA6813 /* PokemonsViewController.swift */; };
 		16214B211DDC9D4900EA6813 /* TrainersInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 16214B201DDC9D4900EA6813 /* TrainersInfo.json */; };
+		16BB2F2E1DDCF14B0029F461 /* TreinerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E57A711DDCA6CD00665D3E /* TreinerManager.swift */; };
+		16BB2F2F1DDCF1E60029F461 /* PokemonsInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 16214B1A1DDC962D00EA6813 /* PokemonsInfo.json */; };
+		16BB2F301DDCF3A40029F461 /* TreinerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E57A711DDCA6CD00665D3E /* TreinerManager.swift */; };
 		A9E57A721DDCA6CD00665D3E /* TreinerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E57A711DDCA6CD00665D3E /* TreinerManager.swift */; };
 		A9E57A731DDCC9F900665D3E /* PokemonsInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 16214B1A1DDC962D00EA6813 /* PokemonsInfo.json */; };
 		A9E57A741DDCC9FC00665D3E /* TrainersInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 16214B201DDC9D4900EA6813 /* TrainersInfo.json */; };
@@ -308,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16BB2F2F1DDCF1E60029F461 /* PokemonsInfo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16214AFA1DDC860F00EA6813 /* StadiumTests.swift in Sources */,
+				16BB2F301DDCF3A40029F461 /* TreinerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16214B051DDC860F00EA6813 /* StadiumUITests.swift in Sources */,
+				16BB2F2E1DDCF14B0029F461 /* TreinerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
